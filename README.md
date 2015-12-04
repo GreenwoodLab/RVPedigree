@@ -21,6 +21,15 @@ library(devtools)
 devtools::install_github('GreenwoodLab/RVPedigree', build_vignettes = TRUE)
 ```
 
+## Usage
+
+Please see the included vignette to see how the functions included in this package can be used. From within R use the following command:
+
+``` r
+vignette("vignette", package = "RVPedigree")
+```
+
+
 ## References
 
 A BibTeX entry for LaTeX users:
