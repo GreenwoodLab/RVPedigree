@@ -4,7 +4,7 @@ year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
 vers <- paste("R package version", meta$Version)
 
 citEntry(entry="Manual",
-         title = "{RVpedigree}: Methods for Family-Based Rare-Variant Genetic Association Tests",
+         title = "RVpedigree: Methods for Family-Based Rare-Variant Genetic Association Tests",
          author = personList(person("Karim Oualkacha"),
                              person("M'Hamed Lajmi Lakhal-Chaieb"),
                              person("Celia M.T. Greenwood"),
