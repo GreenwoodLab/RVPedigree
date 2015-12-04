@@ -1,0 +1,46 @@
+citHeader("To cite the 'RVPedigree' package in publications use:")
+
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
+vers <- paste("R package version", meta$Version)
+
+citEntry(entry="Manual",
+         title = "{RVpedigree}: Methods for Family-Based Rare-Variant Genetic Association Tests",
+         author = personList(as.person("Karim Oualkacha"),
+                             as.person("M'Hamed Lajmi Lakhal-Chaieb"),
+                             as.person("Celia M.T. Greenwood"),
+                             as.person("Lennart C. Karssen"),
+                             as.person("Sodbo Sharapov")
+                             ),
+         year = year,
+         note = vers,
+
+         textVersion =
+             paste("Karim Oualkacha, ",
+                   "M'Hamed Lajmi Lakhal-Chaieb, ",
+                   "Celia M.T. Greenwood, ",
+                   "Lennart C. Karssen, ",
+                   "Sodbo Sharapov, ",
+                   "(", year,
+                   "). RVpedigree: Methods for Family-Based Rare-Variant",
+                   " Genetic Association Tests. ", vers, ".", sep=""))
+
+citEntry(entry="Article",
+         title =
+         "A rare variant association test in family-based designs and non-normal quantitative traits",
+         author = personList(as.person("Lajmi Lakhal-Chaieb"),
+                             as.person("Karim Oualkacha"),
+                             as.person("Brent J. Richards"),
+                             as.person("Celia M.T. Greenwood")),
+	 journal = "Statistics in Medicine",
+         year     = "2015",
+         url      = "http://dx.doi.org/10.1002/sim.6750",
+
+         textVersion =
+             paste("Lajmi Lakhal-Chaieb, ",
+                   "Karim Oualkacha, ",
+                   "Brent J. Richards, and ",
+                   "Celia M.T. Greenwood",
+                   " (2015)",
+                   "A rare variant association test in family-based designs and non-normal quantitative traits.",
+                   "Statistics in Medicine, doi:10.1002/sim.6750")
+)
