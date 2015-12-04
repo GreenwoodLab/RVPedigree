@@ -1,5 +1,5 @@
 # RVPedigree
-[![Build Status](https://travis-ci.org/GreenwoodLab/pcev.svg?branch=master)](https://travis-ci.org/GreenwoodLab/pcev)
+[![Build Status](https://travis-ci.org/GreenwoodLab/RVPedigree.svg?branch=master)](https://travis-ci.org/GreenwoodLab/RVPedigree)
 
 
 An R package which is a collection of the five region-based rare-variant genetic association tests. The following tests are currently implemented: ASKAT, ASKAT-Normalized, VC-C1, VC-C2 and VC-C3. 

@@ -7,6 +7,9 @@ bioc_packages:
 r_binary_packages:
   - knitr
 
+apt_packages:
+  - latex-xcolor
+
 notifications:
   email:
     - oualkacha.karim@uqam.ca
