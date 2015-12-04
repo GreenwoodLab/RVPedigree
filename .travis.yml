@@ -1,6 +1,9 @@
 language: r
 sudo: required
 
+bioc_packages:
+  - snpStats
+
 r_binary_packages:
   - knitr
 
