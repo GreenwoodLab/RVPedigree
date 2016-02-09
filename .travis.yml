@@ -10,7 +10,7 @@ r_binary_packages:
 apt_packages:
   - latex-xcolor
   - texlive-fonts-extra
-  - tff-inconsolata
+  - ttf-inconsolata
 
 notifications:
   email:
