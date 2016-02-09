@@ -1,6 +1,7 @@
 install:
     - sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended 
     - sudo apt-get install texlive-fonts-extra ttf-inconsolata ttf-droid
+    - sudo apt-get install r-cran-knitr
 
 language: r
 sudo: required
