@@ -12,6 +12,7 @@ apt_packages:
   - texlive-fonts-extra
   - ttf-inconsolata
   - texinfo
+  - texlive-fonts-recommended
 
 notifications:
   email:
