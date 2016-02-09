@@ -11,6 +11,7 @@ apt_packages:
   - latex-xcolor
   - texlive-fonts-extra
   - ttf-inconsolata
+  - texlive-collection-fontsrecommended
 
 notifications:
   email:
