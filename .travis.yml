@@ -1,6 +1,9 @@
 language: r
 sudo: required
 
+# the check throws an error because it can't open some graphic device
+warnings_are_errors: false
+
 bioc_packages:
   - snpStats
 
@@ -9,6 +12,10 @@ r_binary_packages:
 
 apt_packages:
   - latex-xcolor
+  - texlive-fonts-extra
+  - ttf-inconsolata
+  - texinfo
+  - texlive-fonts-recommended
 
 notifications:
   email:
