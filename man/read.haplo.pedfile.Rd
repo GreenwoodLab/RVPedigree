@@ -6,7 +6,7 @@
 (regular PLINK untransposed text files)}
 \usage{
 read.haplo.pedfile(filename = "NULL", map, chr = "NULL",
-  startpos = "NULL", endpos = "NULL")
+  startpos = "NULL", endpos = "NULL", recode = "recodeLetters")
 }
 \arguments{
 \item{filename}{character, path to PED file containing haplotype
@@ -25,10 +25,15 @@ region of interest (default: 0)}
 
 \item{endpos}{numeric, end position (in bp, base pairs) of the
 region of interest (default: 0)}
+
+\item{recode}{character, designates if data are in 1/2 format or in
+letters (A, C, G, T) format. The defaut is 1/2 where 1
+designating the minor allele}
 }
 \value{
 matrix object containing the haplotypes selected by the
-region of interest
+    region of interest, or \code{NULL} if there are no variants in
+    the region
 }
 \description{
 Read haplotype data, selected by region of interest, from PED files

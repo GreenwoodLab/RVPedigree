@@ -15,7 +15,7 @@
 #' \code{\link{read.haplo.bedfile}},
 #' \code{\link{read.haplo.shapeit_haps}},
 #' \code{\link{readMapFile}}
-#' @import snpStats
+#' @importFrom data.table fread
 #' @keywords internal
 read.haplo.pedfile <- function(filename = "NULL",
                                map,

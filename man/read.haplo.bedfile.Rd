@@ -28,7 +28,8 @@ region of interest (default: 0)}
 }
 \value{
 matrix object containing the haplotypes selected by the
-region of interest
+    region of interest, or \code{NULL} if there are no variants in
+    the region
 }
 \description{
 Read haplotype data, selected by region of interest, from BED files
