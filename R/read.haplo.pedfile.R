@@ -4,6 +4,9 @@
 #' @param filename character, path to PED file containing haplotype
 #' data. Attention! filename should contain path to \code{<file>.ped}
 #' with full file name. For example \code{../mydata/inputplink.ped}
+#' @param recode character, designates if data are in 1/2 format or in
+#'     letters (A, C, G, T) format. The defaut is 1/2 where 1
+#'     designating the minor allele
 #' @inheritParams read.haplo
 #' @return matrix object containing the haplotypes selected by the
 #' region of interest
@@ -17,21 +20,36 @@ read.haplo.pedfile <- function(filename = "NULL",
                                map,
                                chr = "NULL",
                                startpos = "NULL",
-                               endpos = "NULL"){
-    # TODO: probably we want to automatically append ".ped" to filename
-    # TODO: add extensions
-    snps2out <- map[which(map[, 1] == chr &
-                              map[, 3] > startpos &
-                                  map[, 3] < endpos),
-                    2]
+                               endpos = "NULL",
+                               recode = "recodeLetters"){
 
-    plink.input <- snpStats::read.pedfile(file = filename,
-                                          snps = snps2out)
+    snps2out <- as.numeric(rownames(map)[which(map[, 1] == chr &
+                                               map[, 3] > startpos &
+                                               map[, 3] < endpos)])
 
-    GenotypeMatrix <- methods::as(plink.input$genotypes, "numeric")
-    # TODO: added 'rownames(GenotypeMatrix) <- idNames' may required
-    return(GenotypeMatrix)
+
+    cols2out = as.vector(sapply(snps2out, ff.hap))
+
+    switch(recode,
+           recode12={
+               haplotypes = as.data.frame(fread(filename,
+                                                select = cols2out,
+                                                colClasses = 'character'))
+           },
+           recodeLetters={
+               haplotypes = as.data.frame(fread(filename,
+                                                select = cols2out,
+                                                colClasses = 'character'))
+               list.haplo = lapply(seq_len(ncol(haplotypes)/2), function(i){
+                   haplotypes[, c(((2*i) - 1):(2*i))]
+               }
+               )
+               haplotypes = lapply(list.haplo, lettersTo12)
+               haplotypes = matrix(as.numeric(unlist(haplotypes)),
+                                   nrow = dim(haplotypes[[1]])[1],
+                                   byrow = FALSE)
+           }
+           )
+
+    return(haplotypes)
 }
-
-# tmp = read.haplo.pedfile(filename = "data.ped",map = tmp1,chr = 1,
-#	startpos = 9000, endpos = 25000)

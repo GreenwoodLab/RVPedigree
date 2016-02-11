@@ -85,7 +85,7 @@ VCC1.region <- function(y=NULL,
 
     result.df <- data.frame(Score.Test=pval$score,
                             P.value=pval$p.value,
-                            N.Markers=ncol(haplotypes))
+                            N.Markers=ncol(G))
 
     if (!is.null(regionname)) {
         rownames(result.df) <- regionname
