@@ -1,5 +1,7 @@
-##' Runs the normalized ASKAT method on a given genomic region. Rank-based normalization is applied
-##' to the phenotype residauls under the null model, after adjusting for covariate effects 
+##' Runs the normalized ASKAT method on a given genomic region.
+##'
+##' Rank-based normalization is applied to the phenotype residuals
+##' under the null model, after adjusting for covariate effects.
 ##'
 ##' @title Run the normalized ASKAT method on a genomic region defined
 ##'     by a start and a stop base pair coordinate
@@ -17,7 +19,8 @@
 ##'     \item \code{regionname}: Name of the region/gene on which you
 ##'     are running the association test
 ##'     }
-##' @author Lennart C. Karssen, Sodbo Sharapov
+##' @author Lennart C. Karssen
+##' @author Sodbo Sharapov
 ##' @export
 NormalizedASKAT.region <- function(y=NULL,
                                    X=NULL,
@@ -56,7 +59,7 @@ NormalizedASKAT.region <- function(y=NULL,
                           startpos=startpos,
                           endpos=endpos)
 
-    if (ncol(haplotypes) == 0) {
+    if (is.null(haplotypes) || ncol(haplotypes) == 0) {
         warning("No genotypes available in the region from ",
                       startpos, " to ", endpos, " on chromosome ", chr)
         result.df <- data.frame(Score.Test=NA,
@@ -85,7 +88,7 @@ NormalizedASKAT.region <- function(y=NULL,
 
     result.df <- data.frame(Score.Test=pval$score,
                             P.value=pval$p.value,
-                            N.Markers=ncol(haplotypes))
+                            N.Markers=ncol(G))
 
     if (!is.null(regionname)) {
         rownames(result.df) <- regionname

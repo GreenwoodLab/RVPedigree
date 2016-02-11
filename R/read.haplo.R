@@ -2,24 +2,26 @@
 #' files or ShapeIt output files
 #'
 #' @param type character, \code{'ped'}, \code{'bed'} (default) or
-#' \code{'shapeit-haps'} format of input file containing haplotype
-#' data
-#' @param filename character, path to input file containing haplotype data
+#'     \code{'shapeit-haps'} format of input file containing haplotype
+#'     data
+#' @param filename character, path to input file containing haplotype
+#'     data
 #' @param map object, data.frame contains 3 columns: rsID, chromosome,
-#' position in bp as output by e.g. \code{\link{readMapFile}}.
-#' @param chr character, chromosome number (basically from 1 to 22 as used by
-#' \href{http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#ped}{Plink}),
-#' on which the region of interest is located
+#'     position in bp as output by e.g. \code{\link{readMapFile}}.
+#' @param chr character, chromosome number (basically from 1 to 22 as
+#'     used by
+#'     \href{http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#ped}{Plink}),
+#'     on which the region of interest is located
 #' @param startpos numeric, start position (in bp, base pairs) of the
 #'     region of interest (default: 0)
 #' @param endpos numeric, end position (in bp, base pairs) of the
 #'     region of interest (default: 0)
 #' @return matrix object containing the haplotypes selected by the
-#' region of interest
+#'     region of interest
 #' @seealso \code{\link{read.haplo.pedfile}},
-#' \code{\link{read.haplo.bedfile}},
-#' \code{\link{read.haplo.shapeit_haps}},
-#' \code{\link{readMapFile}}
+#'     \code{\link{read.haplo.bedfile}},
+#'     \code{\link{read.haplo.shapeit_haps}},
+#'     \code{\link{readMapFile}}
 #' @keywords internal
 read.haplo <- function(type="bed",
                        filename,

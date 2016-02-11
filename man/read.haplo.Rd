@@ -13,12 +13,14 @@ read.haplo(type = "bed", filename, map, chr = 0, startpos = 0,
 \code{'shapeit-haps'} format of input file containing haplotype
 data}
 
-\item{filename}{character, path to input file containing haplotype data}
+\item{filename}{character, path to input file containing haplotype
+data}
 
 \item{map}{object, data.frame contains 3 columns: rsID, chromosome,
 position in bp as output by e.g. \code{\link{readMapFile}}.}
 
-\item{chr}{character, chromosome number (basically from 1 to 22 as used by
+\item{chr}{character, chromosome number (basically from 1 to 22 as
+used by
 \href{http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#ped}{Plink}),
 on which the region of interest is located}
 
@@ -30,7 +32,7 @@ region of interest (default: 0)}
 }
 \value{
 matrix object containing the haplotypes selected by the
-region of interest
+    region of interest
 }
 \description{
 Read haplotype data, selected by region of interest, from PLINK formatted
@@ -38,9 +40,9 @@ files or ShapeIt output files
 }
 \seealso{
 \code{\link{read.haplo.pedfile}},
-\code{\link{read.haplo.bedfile}},
-\code{\link{read.haplo.shapeit_haps}},
-\code{\link{readMapFile}}
+    \code{\link{read.haplo.bedfile}},
+    \code{\link{read.haplo.shapeit_haps}},
+    \code{\link{readMapFile}}
 }
 \keyword{internal}
 

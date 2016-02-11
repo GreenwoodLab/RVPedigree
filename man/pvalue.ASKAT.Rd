@@ -8,8 +8,8 @@ pvalue.ASKAT(RH0, y, X, Phi, W, G)
 }
 \arguments{
 \item{RH0}{a vector of length 2 which the results (output) of the
-\code{\link{Estim.H0.ASKAT}} function (i.e. variance components
-estimates under the null model)}
+\code{\link{Estim.H0.ASKAT}} function (i.e. variance
+components estimates under the null model)}
 
 \item{y}{vector of phenotype data (one entry per individual), of
 length \eqn{n}.}

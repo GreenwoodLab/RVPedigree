@@ -6,17 +6,19 @@
 (regular PLINK untransposed text files)}
 \usage{
 read.haplo.pedfile(filename = "NULL", map, chr = "NULL",
-  startpos = "NULL", endpos = "NULL")
+  startpos = "NULL", endpos = "NULL", recode = "recodeLetters")
 }
 \arguments{
 \item{filename}{character, path to PED file containing haplotype
-data. Attention! filename should contain path to \code{<file>.ped}
-with full file name. For example \code{../mydata/inputplink.ped}}
+data. Attention! filename should contain path to
+\code{<file>.ped} with full file name. For example
+\code{../mydata/inputplink.ped}}
 
 \item{map}{object, data.frame contains 3 columns: rsID, chromosome,
 position in bp as output by e.g. \code{\link{readMapFile}}.}
 
-\item{chr}{character, chromosome number (basically from 1 to 22 as used by
+\item{chr}{character, chromosome number (basically from 1 to 22 as
+used by
 \href{http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#ped}{Plink}),
 on which the region of interest is located}
 
@@ -25,20 +27,32 @@ region of interest (default: 0)}
 
 \item{endpos}{numeric, end position (in bp, base pairs) of the
 region of interest (default: 0)}
+
+\item{recode}{character, designates if data are in 1/2 format or in
+letters (A, C, G, T) format. The defaut is 1/2 where 1
+designating the minor allele}
 }
 \value{
 matrix object containing the haplotypes selected by the
-region of interest
+    region of interest, or \code{NULL} if there are no variants in
+    the region
 }
 \description{
 Read haplotype data, selected by region of interest, from PED files
 (regular PLINK untransposed text files)
 }
+\author{
+Lennart C. Karssen
+
+Sodbo Sharapov
+
+Karim Oualkacha
+}
 \seealso{
 \code{\link{read.haplo}},
-\code{\link{read.haplo.bedfile}},
-\code{\link{read.haplo.shapeit_haps}},
-\code{\link{readMapFile}}
+    \code{\link{read.haplo.bedfile}},
+    \code{\link{read.haplo.shapeit_haps}},
+    \code{\link{readMapFile}}
 }
 \keyword{internal}
 

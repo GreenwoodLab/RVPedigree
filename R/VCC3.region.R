@@ -1,7 +1,7 @@
 ##' Runs the VC-C3 method on a given genomic region
 ##'
 ##' @title Run the VC-C3 method on a genomic region defined by a start
-##' and a stop base pair coordinate
+##'     and a stop base pair coordinate
 ##' @inheritParams VCC2.region
 ##' @return A data frame containing the results of the association
 ##'     test. The data frame contains the following columns:
@@ -53,7 +53,7 @@ VCC3.region <- function(y=NULL,
                           startpos=startpos,
                           endpos=endpos)
 
-    if (ncol(haplotypes) == 0) {
+    if (is.null(haplotypes) || ncol(haplotypes) == 0) {
         warning("No genotypes available in the region from ",
                       startpos, " to ", endpos, " on chromosome ", chr)
         result.df <- data.frame(Score.Test=NA,
@@ -106,7 +106,7 @@ VCC3.region <- function(y=NULL,
 
     result.df <- data.frame(Score.Test=pval$score,
                             P.value=pval$p.value.VCC3,
-                            N.Markers=ncol(haplotypes))
+                            N.Markers=ncol(G))
 
     if (!is.null(regionname)) {
         rownames(result.df) <- regionname

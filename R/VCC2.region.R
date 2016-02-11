@@ -1,7 +1,7 @@
 ##' Runs the VC-C2 method on a given genomic region
 ##'
 ##' @title Run the VC-C2 method on a genomic region defined by a start
-##' and a stop base pair coordinate
+##'     and a stop base pair coordinate
 ##' @inheritParams read.haplo
 ##' @inheritParams VCC1.region
 ##' @param Nperm Integer, number of permutations to use for empirical
@@ -60,7 +60,7 @@ VCC2.region <- function(y=NULL,
                           startpos=startpos,
                           endpos=endpos)
 
-    if (ncol(haplotypes) == 0) {
+    if (is.null(haplotypes) || ncol(haplotypes) == 0) {
         warning("No genotypes available in the region from ",
                       startpos, " to ", endpos, " on chromosome ", chr)
         result.df <- data.frame(Score.Test=NA,
@@ -113,7 +113,7 @@ VCC2.region <- function(y=NULL,
 
     result.df <- data.frame(Score.Test=pval$score,
                             P.value=pval$p.value,
-                            N.Markers=ncol(haplotypes))
+                            N.Markers=ncol(G))
 
     if (!is.null(regionname)) {
         rownames(result.df) <- regionname

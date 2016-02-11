@@ -3,7 +3,7 @@
 \name{VCC2.region}
 \alias{VCC2.region}
 \title{Run the VC-C2 method on a genomic region defined by a start
-and a stop base pair coordinate}
+    and a stop base pair coordinate}
 \usage{
 VCC2.region(y = NULL, X = NULL, Phi = NULL, type = "bed",
   filename = NULL, map = NULL, chr = 0, startpos = 0, endpos = 0,
@@ -24,12 +24,14 @@ length \eqn{n}.}
 \code{'shapeit-haps'} format of input file containing haplotype
 data}
 
-\item{filename}{character, path to input file containing haplotype data}
+\item{filename}{character, path to input file containing haplotype
+data}
 
 \item{map}{object, data.frame contains 3 columns: rsID, chromosome,
 position in bp as output by e.g. \code{\link{readMapFile}}.}
 
-\item{chr}{character, chromosome number (basically from 1 to 22 as used by
+\item{chr}{character, chromosome number (basically from 1 to 22 as
+used by
 \href{http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#ped}{Plink}),
 on which the region of interest is located}
 

@@ -16,7 +16,8 @@
 ##'     \item \code{regionname}: Name of the region/gene on which you
 ##'     are running the association test
 ##'     }
-##' @author Sodbo Sharapov, Lennart C. Karssen
+##' @author Sodbo Sharapov
+##' @author Lennart C. Karssen
 ##' @export
 VCC1.region <- function(y=NULL,
                         X=NULL,
@@ -57,7 +58,7 @@ VCC1.region <- function(y=NULL,
                           startpos=startpos,
                           endpos=endpos)
 
-    if (ncol(haplotypes) == 0) {
+    if (is.null(haplotypes) || ncol(haplotypes) == 0) {
         warning("No genotypes available in the region from ",
                       startpos, " to ", endpos, " on chromosome ", chr)
         result.df <- data.frame(Score.Test=NA,
@@ -85,7 +86,7 @@ VCC1.region <- function(y=NULL,
 
     result.df <- data.frame(Score.Test=pval$score,
                             P.value=pval$p.value,
-                            N.Markers=ncol(haplotypes))
+                            N.Markers=ncol(G))
 
     if (!is.null(regionname)) {
         rownames(result.df) <- regionname
