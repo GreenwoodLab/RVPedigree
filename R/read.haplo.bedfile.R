@@ -24,9 +24,10 @@ read.haplo.bedfile <- function(filename = "NULL",
                                   map[, 3] < endpos),
                     2]
 
-    plink.input <- snpStats::read.plink(bed = paste0(filename, ".bed"),
-                                        bim = paste0(filename, ".bim"),
-                                        fam = paste0(filename, ".fam"),
+    basefile <- sub(".bed$", "", filename)
+    plink.input <- snpStats::read.plink(bed = paste0(basefile, ".bed"),
+                                        bim = paste0(basefile, ".bim"),
+                                        fam = paste0(basefile, ".fam"),
                                         select.snps = snps2out)
 
     # TODO: added rownames(GenotyMatrix) <- idNames may requied
