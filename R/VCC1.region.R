@@ -16,7 +16,8 @@
 ##'     \item \code{regionname}: Name of the region/gene on which you
 ##'     are running the association test
 ##'     }
-##' @author Sodbo Sharapov, Lennart C. Karssen
+##' @author Sodbo Sharapov
+##' @author Lennart C. Karssen
 ##' @export
 VCC1.region <- function(y=NULL,
                         X=NULL,

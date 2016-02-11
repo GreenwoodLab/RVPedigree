@@ -1,7 +1,7 @@
 ##' Runs the VC-C2 method on a given genomic region
 ##'
 ##' @title Run the VC-C2 method on a genomic region defined by a start
-##' and a stop base pair coordinate
+##'     and a stop base pair coordinate
 ##' @inheritParams read.haplo
 ##' @inheritParams VCC1.region
 ##' @param Nperm Integer, number of permutations to use for empirical

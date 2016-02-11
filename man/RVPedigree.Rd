@@ -28,7 +28,8 @@ length \eqn{n}.}
 \item{Phi}{Relationship matrix (i.e. twice the kinship matrix); an
 \eqn{n \times n} square symmetric positive-definite matrix.}
 
-\item{filename}{character, path to input file containing haplotype data}
+\item{filename}{character, path to input file containing haplotype
+data}
 
 \item{type}{character, \code{'ped'}, \code{'bed'} (default) or
 \code{'shapeit-haps'} format of input file containing haplotype

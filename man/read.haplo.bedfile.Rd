@@ -10,13 +10,15 @@ read.haplo.bedfile(filename = "NULL", map, chr = "NULL",
 }
 \arguments{
 \item{filename}{character, path to BED file containing haplotype
-data. Attention! filename should contain path to \code{<file>.bed}
-with full file name. For example \code{../mydata/inputplink.bed}.}
+data. Attention! filename should contain path to
+\code{<file>.bed} with full file name. For example
+\code{../mydata/inputplink.bed}.}
 
 \item{map}{object, data.frame contains 3 columns: rsID, chromosome,
 position in bp as output by e.g. \code{\link{readMapFile}}.}
 
-\item{chr}{character, chromosome number (basically from 1 to 22 as used by
+\item{chr}{character, chromosome number (basically from 1 to 22 as
+used by
 \href{http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#ped}{Plink}),
 on which the region of interest is located}
 
@@ -37,9 +39,9 @@ Read haplotype data, selected by region of interest, from BED files
 }
 \seealso{
 \code{\link{read.haplo}},
-\code{\link{read.haplo.pedfile}},
-\code{\link{read.haplo.shapeit_haps}},
-\code{\link{readMapFile}}
+    \code{\link{read.haplo.pedfile}},
+    \code{\link{read.haplo.shapeit_haps}},
+    \code{\link{readMapFile}}
 }
 \keyword{internal}
 

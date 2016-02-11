@@ -24,12 +24,14 @@ length \eqn{n}.}
 \code{'shapeit-haps'} format of input file containing haplotype
 data}
 
-\item{filename}{character, path to input file containing haplotype data}
+\item{filename}{character, path to input file containing haplotype
+data}
 
 \item{map}{object, data.frame contains 3 columns: rsID, chromosome,
 position in bp as output by e.g. \code{\link{readMapFile}}.}
 
-\item{chr}{character, chromosome number (basically from 1 to 22 as used by
+\item{chr}{character, chromosome number (basically from 1 to 22 as
+used by
 \href{http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#ped}{Plink}),
 on which the region of interest is located}
 
@@ -86,10 +88,15 @@ A data frame containing the results of the association
     }
 }
 \description{
-Runs the normalized ASKAT method on a given genomic region. Rank-based normalization is applied
-to the phenotype residauls under the null model, after adjusting for covariate effects
+Runs the normalized ASKAT method on a given genomic region.
+}
+\details{
+Rank-based normalization is applied to the phenotype residuals
+under the null model, after adjusting for covariate effects.
 }
 \author{
-Lennart C. Karssen, Sodbo Sharapov
+Lennart C. Karssen
+
+Sodbo Sharapov
 }
 

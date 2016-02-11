@@ -1,7 +1,7 @@
 ##' Runs the VC-C3 method on a given genomic region
 ##'
 ##' @title Run the VC-C3 method on a genomic region defined by a start
-##' and a stop base pair coordinate
+##'     and a stop base pair coordinate
 ##' @inheritParams VCC2.region
 ##' @return A data frame containing the results of the association
 ##'     test. The data frame contains the following columns:

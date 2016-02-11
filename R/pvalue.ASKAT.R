@@ -1,8 +1,8 @@
 ##' Compute p-value and score for the ASKAT method
 ##'
 ##' @param RH0 a vector of length 2 which the results (output) of the
-##' \code{\link{Estim.H0.ASKAT}} function (i.e. variance components
-##' estimates under the null model)
+##'     \code{\link{Estim.H0.ASKAT}} function (i.e. variance
+##'     components estimates under the null model)
 ##' @inheritParams RVPedigree
 ##' @param G matrix of genotypes
 ##' @return A list with score and p-value for the ASKAT test on the

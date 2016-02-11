@@ -2,8 +2,9 @@
 #' (regular PLINK untransposed text files)
 #'
 #' @param filename character, path to PED file containing haplotype
-#' data. Attention! filename should contain path to \code{<file>.ped}
-#' with full file name. For example \code{../mydata/inputplink.ped}
+#'     data. Attention! filename should contain path to
+#'     \code{<file>.ped} with full file name. For example
+#'     \code{../mydata/inputplink.ped}
 #' @param recode character, designates if data are in 1/2 format or in
 #'     letters (A, C, G, T) format. The defaut is 1/2 where 1
 #'     designating the minor allele
@@ -12,9 +13,12 @@
 #'     region of interest, or \code{NULL} if there are no variants in
 #'     the region
 #' @seealso \code{\link{read.haplo}},
-#' \code{\link{read.haplo.bedfile}},
-#' \code{\link{read.haplo.shapeit_haps}},
-#' \code{\link{readMapFile}}
+#'     \code{\link{read.haplo.bedfile}},
+#'     \code{\link{read.haplo.shapeit_haps}},
+#'     \code{\link{readMapFile}}
+#' @author Lennart C. Karssen
+#' @author Sodbo Sharapov
+#' @author Karim Oualkacha
 #' @importFrom data.table fread
 #' @keywords internal
 read.haplo.pedfile <- function(filename = "NULL",
