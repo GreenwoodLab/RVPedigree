@@ -53,7 +53,7 @@ VCC3.region <- function(y=NULL,
                           startpos=startpos,
                           endpos=endpos)
 
-    if (ncol(haplotypes) == 0) {
+    if (is.null(haplotypes) || ncol(haplotypes) == 0) {
         warning("No genotypes available in the region from ",
                       startpos, " to ", endpos, " on chromosome ", chr)
         result.df <- data.frame(Score.Test=NA,

@@ -6,7 +6,8 @@
 #' with full file name. For example \code{../mydata/inputplink.bed}.
 #' @inheritParams read.haplo
 #' @return matrix object containing the haplotypes selected by the
-#' region of interest
+#'     region of interest, or \code{NULL} if there are no variants in
+#'     the region
 #' @seealso \code{\link{read.haplo}},
 #' \code{\link{read.haplo.pedfile}},
 #' \code{\link{read.haplo.shapeit_haps}},
@@ -23,6 +24,13 @@ read.haplo.bedfile <- function(filename = "NULL",
                               map[, 3] > startpos &
                                   map[, 3] < endpos),
                     2]
+
+    if ( length(snps2out) < 1 ) {
+        warning("No genotypes available in the region from ",
+                startpos, " to ", endpos, " on chromosome ",
+                chr, " (filename ", filename, ")")
+        return(NULL)
+    }
 
     basefile <- sub(".bed$", "", filename)
     plink.input <- snpStats::read.plink(bed = paste0(basefile, ".bed"),

@@ -9,7 +9,8 @@
 #'     designating the minor allele
 #' @inheritParams read.haplo
 #' @return matrix object containing the haplotypes selected by the
-#' region of interest
+#'     region of interest, or \code{NULL} if there are no variants in
+#'     the region
 #' @seealso \code{\link{read.haplo}},
 #' \code{\link{read.haplo.bedfile}},
 #' \code{\link{read.haplo.shapeit_haps}},
@@ -27,6 +28,12 @@ read.haplo.pedfile <- function(filename = "NULL",
                                                map[, 3] > startpos &
                                                map[, 3] < endpos)])
 
+    if ( length(snps2out) < 1 ) {
+        warning("No genotypes available in the region from ",
+                startpos, " to ", endpos, " on chromosome ",
+                chr, " (filename ", filename, ")")
+        return(NULL)
+    }
 
     cols2out = as.vector(sapply(snps2out, ff.hap))
 
